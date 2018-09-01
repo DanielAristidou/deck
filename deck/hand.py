@@ -9,7 +9,7 @@ class Hand(object):
         self.cards = cards
 
     def retrieve_card(self, face, suit):
-        if not isinstance(face, Face) and not isinstance(suit,Suit):
+        if not isinstance(face, Face) and not isinstance(suit, Suit):
             raise TypeError("face and type must be of type Face and Type")
 
         index = self.cards.index(FaceCard(face, suit))
@@ -21,7 +21,7 @@ class Hand(object):
         retrieved_cards = []
 
         for face, suit in cards:
-            retrieved_cards.append(self.retrieve_card(face,suit))
+            retrieved_cards.append(self.retrieve_card(face, suit))
 
         return retrieved_cards
 
@@ -34,3 +34,9 @@ class Hand(object):
 
     def __repr__(self):
         return str(self.cards)
+
+    def face_values(self):
+        return [card.face for card in self.cards]
+
+    def suit_values(self):
+        return [card.suit for card in self.cards]
