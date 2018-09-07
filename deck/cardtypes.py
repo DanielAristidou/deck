@@ -46,7 +46,7 @@ class Suit(Enum):
 
 @unique
 class Special(Enum):
-    JOKER = 1
+    JOKER = 0
 
     def __str__(self):
         return str(self.name)
